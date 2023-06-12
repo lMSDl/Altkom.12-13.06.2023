@@ -1,71 +1,127 @@
-﻿
-string inputString = Console.ReadLine();
+﻿string inputString = Console.ReadLine();
 int inputInt = int.Parse(inputString);
 
-//porównanie wartości - podwójny znak ==
-bool result = inputInt == 0;
-Console.WriteLine(result);
-
-if(result)
-{
-    Console.WriteLine($"Wartość {inputInt} jest równa 0");
-}
-
-//różne - !=   
-if(inputInt != 0)
-{
-    Console.WriteLine($"Wartość {inputInt} jest różna od 0");
-}
-
-//negacja - !
-if (!(inputInt == 0))
-{
-    Console.WriteLine($"Wartość {inputInt} jest różna od 0");
-}
-
-Console.WriteLine("-----");
-
-//else łączy if'y, przez co w takim bloku może wykonać się tylko jeda akcja opowiadająca warunkowi
-if(inputInt > 0)
+if (inputInt > 0)
 {
     Console.WriteLine($"Wartość {inputInt} jest więszka od 0");
 }
-else if(inputInt < 0)
+else if (inputInt < 0)
 {
     Console.WriteLine($"Wartość {inputInt} jest mniejsza od 0");
 }
-//else bez if = wykonaj jeśli znie znalazłeś wcześniej dopasowania
-else if (inputInt >= 0)
+else 
 {
     Console.WriteLine($"Wartość {inputInt} jest równa 0");
 }
 
 
-
-
-Console.WriteLine("-----");
-
-if(inputInt >= 0)
+//switch przyjmuje parametr, który porównywany jest z listą przypadów (case'ów)
+switch(inputInt)
 {
-    Console.WriteLine($"Wartość {inputInt} jest więszka lub równa 0");
+    case > 0:
+        Console.WriteLine($"Wartość {inputInt} jest więszka od 0");
+        break;
+
+    case < 0:
+        Console.WriteLine($"Wartość {inputInt} jest mniejsza od 0");
+        break;
+
+        //default jest opcjonalny i wywołuje się gdy nie znaleziono odpowiedniego case
+    default:
+        Console.WriteLine($"Wartość {inputInt} jest równa 0");
+        break;
 }
 
-// || - logiczne lub
-if (inputInt > 0 || inputInt == 0)
+
+Console.WriteLine("Jak masz na imię?");
+string name = Console.ReadLine();
+switch(name)
 {
-    Console.WriteLine($"Wartość {inputInt} jest więszka lub równa 0");
-}
-// && - logiczne and
-if(inputInt > 0 && inputInt <= 10 )
-{
-    Console.WriteLine($"Wartość {inputInt} jest z przedziału (0;10>");
+    case "":
+        Console.WriteLine("Szkoda, że nie chcesz podać swojego imienia");
+        break;
+    case "Alexa":
+        Console.WriteLine("Hej, masz na imię tak jak asystem Amazon?");
+        break;
+    default:
+        Console.WriteLine($"Cześć {name}, jak się czujesz?");
+        break;
 }
 
-if (inputInt > 0 && (inputInt < 10 || inputInt == 10))
-{
-    Console.WriteLine($"Wartość {inputInt} jest z przedziału (0;10>");
-}
 
+
+
+
+void If()
+{
+
+    string inputString = Console.ReadLine();
+    int inputInt = int.Parse(inputString);
+
+    //porównanie wartości - podwójny znak ==
+    bool result = inputInt == 0;
+    Console.WriteLine(result);
+
+    if (result)
+    {
+        Console.WriteLine($"Wartość {inputInt} jest równa 0");
+    }
+
+    //różne - !=   
+    if (inputInt != 0)
+    {
+        Console.WriteLine($"Wartość {inputInt} jest różna od 0");
+    }
+
+    //negacja - !
+    if (!(inputInt == 0))
+    {
+        Console.WriteLine($"Wartość {inputInt} jest różna od 0");
+    }
+
+    Console.WriteLine("-----");
+
+    //else łączy if'y, przez co w takim bloku może wykonać się tylko jeda akcja opowiadająca warunkowi
+    if (inputInt > 0)
+    {
+        Console.WriteLine($"Wartość {inputInt} jest więszka od 0");
+    }
+    else if (inputInt < 0)
+    {
+        Console.WriteLine($"Wartość {inputInt} jest mniejsza od 0");
+    }
+    //else bez if = wykonaj jeśli znie znalazłeś wcześniej dopasowania
+    else //if (inputInt == 0)
+    {
+        Console.WriteLine($"Wartość {inputInt} jest równa 0");
+    }
+
+
+
+
+    Console.WriteLine("-----");
+
+    if (inputInt >= 0)
+    {
+        Console.WriteLine($"Wartość {inputInt} jest więszka lub równa 0");
+    }
+
+    // || - logiczne lub
+    if (inputInt > 0 || inputInt == 0)
+    {
+        Console.WriteLine($"Wartość {inputInt} jest więszka lub równa 0");
+    }
+    // && - logiczne and
+    if (inputInt > 0 && inputInt <= 10)
+    {
+        Console.WriteLine($"Wartość {inputInt} jest z przedziału (0;10>");
+    }
+
+    if (inputInt > 0 && (inputInt < 10 || inputInt == 10))
+    {
+        Console.WriteLine($"Wartość {inputInt} jest z przedziału (0;10>");
+    }
+}
 
 
 
