@@ -55,3 +55,7 @@ Console.WriteLine(output);
 
 output = output.Replace(" -^- ", ", ").Substring(5, 10);
 Console.WriteLine(output);
+
+
+string input = Console.ReadLine();
+Console.WriteLine(input.ToLower());
