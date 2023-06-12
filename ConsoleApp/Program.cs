@@ -45,3 +45,13 @@ Console.WriteLine(helloOuput);
 //łączenie stringów za pomocą funkcji Join (pierwszy parametr to separator)
 helloOuput = string.Join(" -^- ", helloVariable, worldString, "ala", "makota");
 Console.WriteLine(helloOuput);
+
+
+Console.WriteLine($"string \"{helloOuput}\" ma długość {helloOuput.Length}");
+
+string output = $"string \"{helloOuput}\" ma długość {helloOuput.Length}";
+Console.WriteLine(output.ToUpper());
+Console.WriteLine(output);
+
+output = output.Replace(" -^- ", ", ").Substring(5, 10);
+Console.WriteLine(output);
