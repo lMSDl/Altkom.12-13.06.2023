@@ -33,7 +33,6 @@ Person person = new Person() { Imie = "Jan", Wiek = 42 };
 Console.WriteLine(person.ShowFullName());
 
 
-
 void ForEach()
 {
 
