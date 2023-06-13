@@ -1,22 +1,92 @@
 ﻿
 
 
-string inputString = Console.ReadLine();
+string a = "ala";
+string b = "ma";
+string c = "kota";
 
-int inputInt;
-bool canParse = int.TryParse(inputString, out inputInt);
 
-if(!canParse)
+//tworzymy tablicę z 3 wskazanych elementów
+string[] stringArray = { a, b, c };
+Console.WriteLine($"Rozmiar tablicy: {stringArray.Length}");
+
+//tworzymy pustą tablicę 3 elementową dla stringów
+string[] anotherStringArray = new string[3];
+Console.WriteLine($"Rozmiar tablicy: {anotherStringArray.Length}");
+//przypisujemy wartości pod konkretne indeksy tablicy (indeks liczony od 0)
+anotherStringArray[0] = a;
+anotherStringArray[1] = b;
+anotherStringArray[2] = c;
+//max indeks = Length-1
+Console.WriteLine(anotherStringArray[0] + anotherStringArray[1] + anotherStringArray[2]);
+Console.WriteLine(string.Format("{0} {1} {2}", stringArray));
+
+//odwrócenie kolejności elementów w tablicy
+Array.Reverse(stringArray);
+Console.WriteLine($"{stringArray[0]} {stringArray[1]} {stringArray[2]}");
+
+//tworząc tablicę zostaje ona wypełniona wartościami domyślnymi (dla string -> null, dla int/long/float/double... -> 0)
+int[] intArray = new int[3];
+//przekształcamy tablicę do listy
+List<int> intListFromintArray = intArray.ToList();
+
+//List jest klasą generyczną, czyli potrzebuje określenie typu elementów na których będzie pracować (typ podaje się w <>)
+List<int> intList = new List<int>();
+//nowa lista jest pusta i dodając noew elementy zwiększamy jej rozmiar
+intList.Add(1);
+intList.Add(4);
+intList.Add(6);
+intList.Add(12);
+intList.Add(553);
+
+//możemy utworzyć wstępnie wypełnioną listę
+List<string> stringList = new List<string>() { a, b, c };
+
+//usuwając elemnt z listy, zmniejsza ona swój rozmiar
+//Remove usuwa konkretną wartość
+intList.Remove(553);
+//RemoveAt usuwa wartość spod podanego indeksu
+intList.RemoveAt(2);
+
+stringList.Add("!");
+
+//do elementów listy możemy odwoływać się jak do elementów tablicy - przez indekser
+Console.WriteLine(stringList[0] + stringList[1] + stringList[2]);
+
+//w celu użycia listy w string.Format należyt przekształcić ją na tablicę
+Console.WriteLine(string.Format("{0} {1} {2}", stringList.ToArray()));
+
+Console.WriteLine();
+
+string input = Console.ReadLine();
+//metoda Split dzieli string wg podanego separatora (w tym przypadku spacja) i zwraca tablicę stringów
+string[] splitedInput = input.Split(" ");
+
+Console.WriteLine($"Pierwszy element: {splitedInput[0]}");
+Console.WriteLine($"Ostatni element: {splitedInput[splitedInput.Length - 1]}");
+
+Console.WriteLine();
+
+
+
+
+
+void InputValidation()
 {
-    Console.WriteLine($"Nie można przekształcić {inputString} na int");
+    string inputString = Console.ReadLine();
+
+    int inputInt;
+    bool canParse = int.TryParse(inputString, out inputInt);
+
+    if (!canParse)
+    {
+        Console.WriteLine($"Nie można przekształcić {inputString} na int");
+    }
+    else
+    {
+        Console.WriteLine($"Wprowadzona wartość: {inputInt}");
+    }
 }
-else
-{
-    Console.WriteLine($"Wprowadzona wartość: {inputInt}");
-}
-
-
-
 
 
 
