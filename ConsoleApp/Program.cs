@@ -1,72 +1,94 @@
 ﻿
-//I - inicjalizacja pętli - wykonuje się tylko raz na początku
-//II - warunek kontynuacji pętli - wykonuje się przed każdym wykonaniem ciała
-//III - ciało funkcji
-//IV - akcja po wykonaniu ciała pętli - najcześciej inkrementacja licznika
-
-//for(I;II;IV)
-//{
-//  III
-//}
-
-for(int i = 0; i < 5; i++ /*i = i + 1*/) 
-{
-
-    Console.WriteLine(i);
-
-}
-
-Console.WriteLine();
-
-int value = 3;
-//pomijamy etap I
-for (; value < 5; value++)
-{
-
-    Console.WriteLine(value);
-
-}
-
-value = 3;
-//pomijamy etap I i IV
-for (; value < 5; )
-{
-
-    Console.WriteLine(value);
-
-    value = value + 1;
-}
-
-value = 3;
-//coś na kształt while(true)
-for (;;)
-{
-    if(value > 10 && value < 15)
-    {
-        value++;
-        continue;
-    }
-    else if (value < 20)
-    {
-        Console.WriteLine(value);
-        value++;
-    }
-    else
-    {
-        break;
-    }
-}
-
-
 Console.WriteLine("Podaj string:");
 string inputString = Console.ReadLine();
 var splitedInput = inputString.Split(" ");
 
+
 for (int index = 0; index < splitedInput.Length; index++)
 {
-    Console.WriteLine(splitedInput[index]);
+    string element = splitedInput[index];
+    Console.WriteLine(element);
 }
 
+//foreach zwaraca po kolei eszystkie elementy wskazanej kolekcji
+foreach(string element in splitedInput)
+{
+    Console.WriteLine(element);
+}
+
+
+
+
+void For()
+{
+    //I - inicjalizacja pętli - wykonuje się tylko raz na początku
+    //II - warunek kontynuacji pętli - wykonuje się przed każdym wykonaniem ciała
+    //III - ciało funkcji
+    //IV - akcja po wykonaniu ciała pętli - najcześciej inkrementacja licznika
+
+    //for(I;II;IV)
+    //{
+    //  III
+    //}
+
+    for (int i = 0; i < 5; i++ /*i = i + 1*/)
+    {
+
+        Console.WriteLine(i);
+
+    }
+
+    Console.WriteLine();
+
+    int value = 3;
+    //pomijamy etap I
+    for (; value < 5; value++)
+    {
+
+        Console.WriteLine(value);
+
+    }
+
+    value = 3;
+    //pomijamy etap I i IV
+    for (; value < 5;)
+    {
+
+        Console.WriteLine(value);
+
+        value = value + 1;
+    }
+
+    value = 3;
+    //coś na kształt while(true)
+    for (; ; )
+    {
+        if (value > 10 && value < 15)
+        {
+            value++;
+            continue;
+        }
+        else if (value < 20)
+        {
+            Console.WriteLine(value);
+            value++;
+        }
+        else
+        {
+            break;
+        }
+    }
+
+
+    Console.WriteLine("Podaj string:");
+    string inputString = Console.ReadLine();
+    var splitedInput = inputString.Split(" ");
+
+    for (int index = 0; index < splitedInput.Length; index++)
+    {
+        Console.WriteLine(splitedInput[index]);
+    }
+}
 
 
 void WhileDoWhile()
