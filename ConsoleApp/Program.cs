@@ -2,6 +2,7 @@
 
 
 using ConsoleApp.Models;
+using System.Net.Http.Headers;
 
 Item a = new Item();
 Item b  = new Item();
@@ -26,6 +27,11 @@ Console.WriteLine(a.Description);
 a.Quantity = 12;
 
 Item c = new Item(10, "some item", 123);
+
+
+Person person = new Person() { Imie = "Jan", Wiek = 42 };
+Console.WriteLine(person.ShowFullName());
+
 
 
 void ForEach()
