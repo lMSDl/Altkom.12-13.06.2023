@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Inheritance.Models
 {
     // : - dziedziczenie (shape1D dziedziczy po shape)
-    internal abstract class Shape1D : Shape
+    internal abstract class Shape1D : Shape, IName
     {
         //wykorzystujemy konstruktor klasy bazowej poprzez odwołanie do base
         public Shape1D(string name, int width) : base(name)
@@ -26,6 +26,11 @@ namespace Inheritance.Models
         public override void SomeAbstractMethod()
         {
             Console.WriteLine("Hello!");
+        }
+
+        public string GetName()
+        {
+            return Name;
         }
     }
 }

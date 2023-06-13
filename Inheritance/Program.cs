@@ -29,3 +29,6 @@ foreach (var item in shapes)
 {
     Console.WriteLine(  item.ToString() );
 }
+
+IName name = new Rectangle(2, 3);
+name.GetName();
