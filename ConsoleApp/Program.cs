@@ -25,6 +25,8 @@ Console.WriteLine(a.Description);
 
 a.Quantity = 12;
 
+Item c = new Item(10, "some item", 123);
+
 
 void ForEach()
 {

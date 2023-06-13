@@ -12,6 +12,46 @@ namespace ConsoleApp.Models
     //nazwa klasy: pełna nazwa klasy to namespace + nazwa
     public class Item
     {
+        //konstruktor bezparametrowy
+        //konstyruktor jest metodą jak każda inna, którą charakteryzuje brak zwracanego typu i nazwa taka jak nazwa klasy
+        //jeśli w klasie nie ma żadnego konstruktora, to niejawnie zostanie wygenerowany konstrukto domyślny, wygkądający jak poniżej
+        public Item()
+        {
+        }
+
+        //konstruktor parametrowy - słoży do zapewnienia klasie wartości początkowych dla pól i właściwości
+        //jeśli w klasie występuje konstruktor z parametrami, to domyślny konstruktor nie zostanie wygenerowany
+        //chcąć posiadać także konstruktor bezparametory, należy go jawnie dodać
+        public Item(int value, string description, int quantity)
+        {
+            this.value = value;
+            Description = description;
+            Quantity = quantity;
+        }
+
+        //klasa może posiadać dowolną ilość konstruktorów o ile różnią się ilością i typem parametrów
+        public Item(int value, string description)
+        {
+            this.value = value;
+            Description = description;
+        }
+
+        //konstruktory teleskopowe - jeden konstruktor wywołuje inny (przez this())
+        public Item(int value, int quantity) : this(quantity)
+        {
+            this.value = value;
+        }
+
+        public Item(string description, int quantity) : this(quantity)
+        {
+            Description = description;
+        }
+
+        public Item(int quantity)
+        {
+            Quantity = quantity;
+        }
+
         //prywatna zmienna globalna / pole
         //brak modyfikatora dostępu == private - dosęp tylko dla klasy w której jest zadeklarowana
         private int value;
