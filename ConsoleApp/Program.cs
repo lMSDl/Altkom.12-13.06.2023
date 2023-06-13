@@ -1,21 +1,51 @@
 ﻿
-Console.WriteLine("Podaj string:");
-string inputString = Console.ReadLine();
-var splitedInput = inputString.Split(" ");
 
 
-for (int index = 0; index < splitedInput.Length; index++)
+using ConsoleApp.Models;
+
+Item a = new Item();
+Item b  = new Item();
+
+
+Console.WriteLine(a.GetType().Name);
+Console.WriteLine(a.GetType().FullName);
+
+//a.InroduceSelf();
+a.DoSth();
+
+
+/*a.value = 50;
+Console.WriteLine(a.value);*/
+
+a.SetValue(50);
+Console.WriteLine(a.GetValue());
+
+a.Description = "desc";
+Console.WriteLine(a.Description);
+
+a.Quantity = 12;
+
+
+void ForEach()
 {
-    string element = splitedInput[index];
-    Console.WriteLine(element);
-}
 
-//foreach zwaraca po kolei eszystkie elementy wskazanej kolekcji
-foreach(string element in splitedInput)
-{
-    Console.WriteLine(element);
-}
+    Console.WriteLine("Podaj string:");
+    string inputString = Console.ReadLine();
+    var splitedInput = inputString.Split(" ");
 
+
+    for (int index = 0; index < splitedInput.Length; index++)
+    {
+        string element = splitedInput[index];
+        Console.WriteLine(element);
+    }
+
+    //foreach zwaraca po kolei eszystkie elementy wskazanej kolekcji
+    foreach (string element in splitedInput)
+    {
+        Console.WriteLine(element);
+    }
+}
 
 
 
