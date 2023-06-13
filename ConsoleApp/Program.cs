@@ -1,82 +1,157 @@
 ﻿
-Console.WriteLine("Początek pętli while(true)");
-//pętla nieskończona
-while (true) {
-    string input = Console.ReadLine();
+//I - inicjalizacja pętli - wykonuje się tylko raz na początku
+//II - warunek kontynuacji pętli - wykonuje się przed każdym wykonaniem ciała
+//III - ciało funkcji
+//IV - akcja po wykonaniu ciała pętli - najcześciej inkrementacja licznika
 
-    if (input == "exit")
-    {
-        //przerwanie pętli
-        break;
-    }
+//for(I;II;IV)
+//{
+//  III
+//}
 
-    Console.WriteLine(input);
-}
-Console.WriteLine("Koniec pętli while(true)");
-
-
-Console.WriteLine("Początek pętli while(!exit)");
-bool exit = false;
-//pętle while sprawdza warunek przed wejściem do ciała (jest możliwość, że pętla nigdy się nie wykona)
-while (!exit)
+for(int i = 0; i < 5; i++ /*i = i + 1*/) 
 {
-    string input = Console.ReadLine();
 
-    switch (input)
-    {
-        case "exit":
-            exit = true;
-            //break nie przerywa pętli, ponieważ dotyczy on switch'a
-            break;
-        default:
-            Console.WriteLine(input);
-            break;
-    }
+    Console.WriteLine(i);
+
 }
 
-Console.WriteLine("Koniec pętli while(!exit)");
+Console.WriteLine();
 
-
-
-Console.WriteLine("Początek pętli do-while");
-//do-while sprawdza warunek po wykonaniu ciałą - zawsze wykona się przynajmniej raz
-exit = false;
-do
+int value = 3;
+//pomijamy etap I
+for (; value < 5; value++)
 {
-    string input = Console.ReadLine();
-    if(input == "break")
+
+    Console.WriteLine(value);
+
+}
+
+value = 3;
+//pomijamy etap I i IV
+for (; value < 5; )
+{
+
+    Console.WriteLine(value);
+
+    value = value + 1;
+}
+
+value = 3;
+//coś na kształt while(true)
+for (;;)
+{
+    if(value > 10 && value < 15)
     {
-        //przerwanie wykonywania ciała pętli i całej pętli
-        break;
-    }
-    else if(input == "continue")
-    {
-        //przerwanie wykonywania ciała, ale nie przerywamy pętli (rozpoczynamy kolejną iterację)
+        value++;
         continue;
     }
-
-    if (input == "exit")
+    else if (value < 20)
     {
-        exit = true;
+        Console.WriteLine(value);
+        value++;
     }
     else
     {
-        Console.WriteLine(input);
+        break;
     }
-
-} while (!exit);
-Console.WriteLine("Koniec pętli do-while");
+}
 
 
 Console.WriteLine("Podaj string:");
 string inputString = Console.ReadLine();
 var splitedInput = inputString.Split(" ");
 
-int index = 0;
-while(index < splitedInput.Length)
+for (int index = 0; index < splitedInput.Length; index++)
 {
     Console.WriteLine(splitedInput[index]);
-    index = index + 1;
+}
+
+
+
+void WhileDoWhile()
+{
+
+    Console.WriteLine("Początek pętli while(true)");
+    //pętla nieskończona
+    while (true)
+    {
+        string input = Console.ReadLine();
+
+        if (input == "exit")
+        {
+            //przerwanie pętli
+            break;
+        }
+
+        Console.WriteLine(input);
+    }
+    Console.WriteLine("Koniec pętli while(true)");
+
+
+    Console.WriteLine("Początek pętli while(!exit)");
+    bool exit = false;
+    //pętle while sprawdza warunek przed wejściem do ciała (jest możliwość, że pętla nigdy się nie wykona)
+    while (!exit)
+    {
+        string input = Console.ReadLine();
+
+        switch (input)
+        {
+            case "exit":
+                exit = true;
+                //break nie przerywa pętli, ponieważ dotyczy on switch'a
+                break;
+            default:
+                Console.WriteLine(input);
+                break;
+        }
+    }
+
+    Console.WriteLine("Koniec pętli while(!exit)");
+
+
+
+    Console.WriteLine("Początek pętli do-while");
+    //do-while sprawdza warunek po wykonaniu ciałą - zawsze wykona się przynajmniej raz
+    exit = false;
+    do
+    {
+        string input = Console.ReadLine();
+        if (input == "break")
+        {
+            //przerwanie wykonywania ciała pętli i całej pętli
+            break;
+        }
+        else if (input == "continue")
+        {
+            //przerwanie wykonywania ciała, ale nie przerywamy pętli (rozpoczynamy kolejną iterację)
+            continue;
+        }
+
+        if (input == "exit")
+        {
+            exit = true;
+        }
+        else
+        {
+            Console.WriteLine(input);
+        }
+
+    } while (!exit);
+    Console.WriteLine("Koniec pętli do-while");
+
+
+    Console.WriteLine("Podaj string:");
+    string inputString = Console.ReadLine();
+    var splitedInput = inputString.Split(" ");
+
+    int index = 0;
+    while (index < splitedInput.Length)
+    {
+        Console.WriteLine(splitedInput[index]);
+        index = index + 1;
+    }
 }
 
 
