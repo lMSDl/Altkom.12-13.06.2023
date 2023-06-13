@@ -1,54 +1,78 @@
-﻿string inputString = Console.ReadLine();
-int inputInt = int.Parse(inputString);
-
-if (inputInt > 0)
-{
-    Console.WriteLine($"Wartość {inputInt} jest więszka od 0");
-}
-else if (inputInt < 0)
-{
-    Console.WriteLine($"Wartość {inputInt} jest mniejsza od 0");
-}
-else 
-{
-    Console.WriteLine($"Wartość {inputInt} jest równa 0");
-}
+﻿
 
 
-//switch przyjmuje parametr, który porównywany jest z listą przypadów (case'ów)
-switch(inputInt)
+string inputString = Console.ReadLine();
+
+int inputInt;
+bool canParse = int.TryParse(inputString, out inputInt);
+
+if(!canParse)
 {
-    case > 0:
+    Console.WriteLine($"Nie można przekształcić {inputString} na int");
+}
+else
+{
+    Console.WriteLine($"Wprowadzona wartość: {inputInt}");
+}
+
+
+
+
+
+
+void Switch()
+{
+    string inputString = Console.ReadLine();
+    int inputInt = int.Parse(inputString);
+
+    if (inputInt > 0)
+    {
         Console.WriteLine($"Wartość {inputInt} jest więszka od 0");
-        break;
-
-    case < 0:
+    }
+    else if (inputInt < 0)
+    {
         Console.WriteLine($"Wartość {inputInt} jest mniejsza od 0");
-        break;
+    }
+    else
+    {
+        Console.WriteLine($"Wartość {inputInt} jest równa 0");
+    }
+
+
+    //switch przyjmuje parametr, który porównywany jest z listą przypadów (case'ów)
+    switch (inputInt)
+    {
+        case > 0:
+            Console.WriteLine($"Wartość {inputInt} jest więszka od 0");
+            break;
+
+        case < 0:
+            Console.WriteLine($"Wartość {inputInt} jest mniejsza od 0");
+            break;
 
         //default jest opcjonalny i wywołuje się gdy nie znaleziono odpowiedniego case
-    default:
-        Console.WriteLine($"Wartość {inputInt} jest równa 0");
-        break;
+        default:
+            Console.WriteLine($"Wartość {inputInt} jest równa 0");
+            break;
+    }
+
+
+    Console.WriteLine("Jak masz na imię?");
+    string name = Console.ReadLine();
+    switch (name)
+    {
+        case "":
+            Console.WriteLine("Szkoda, że nie chcesz podać swojego imienia");
+            break;
+        case "Alexa":
+            Console.WriteLine("Hej, masz na imię tak jak asystem Amazon?");
+            break;
+        default:
+            Console.WriteLine($"Cześć {name}, jak się czujesz?");
+            break;
+    }
+
 }
-
-
-Console.WriteLine("Jak masz na imię?");
-string name = Console.ReadLine();
-switch(name)
-{
-    case "":
-        Console.WriteLine("Szkoda, że nie chcesz podać swojego imienia");
-        break;
-    case "Alexa":
-        Console.WriteLine("Hej, masz na imię tak jak asystem Amazon?");
-        break;
-    default:
-        Console.WriteLine($"Cześć {name}, jak się czujesz?");
-        break;
-}
-
-
 
 
 
